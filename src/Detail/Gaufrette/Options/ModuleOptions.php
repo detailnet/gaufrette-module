@@ -5,6 +5,11 @@ namespace Detail\Gaufrette\Options;
 class ModuleOptions extends AbstractOptions
 {
     /**
+     * @var array
+     */
+    protected $adapterFactories = array();
+
+    /**
      * @var array[AdapterOptions]
      */
     protected $adapters = array();
@@ -13,6 +18,22 @@ class ModuleOptions extends AbstractOptions
      * @var array
      */
     protected $filesystems = array();
+
+    /**
+     * @return array
+     */
+    public function getAdapterFactories()
+    {
+        return $this->adapterFactories;
+    }
+
+    /**
+     * @param array $adapterFactories
+     */
+    public function setAdapterFactories($adapterFactories)
+    {
+        $this->adapterFactories = $adapterFactories;
+    }
 
     /**
      * @return array[AdapterOptions]
@@ -49,6 +70,12 @@ class ModuleOptions extends AbstractOptions
      */
     public function setFilesystems(array $filesystems)
     {
-        $this->filesystems = $filesystems;
+        $options = array();
+
+        foreach ($filesystems as $name => $config) {
+            $options[$name] = new FilesystemOptions($config);
+        }
+
+        $this->filesystems = $options;
     }
 }

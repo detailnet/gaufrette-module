@@ -11,7 +11,7 @@ use ArrayIterator;
  * Holds references to all declared filesystems
  * and allows to access them through their name.
  */
-class FilesystemService
+class FilesystemService implements FilesystemServiceInterface
 {
     /**
      * Map of filesystems indexed by their name.
@@ -31,17 +31,16 @@ class FilesystemService
         $this->filesystems = $filesystems;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function has($name)
     {
         return isset($this->filesystems[$name]);
     }
 
     /**
-     * Retrieve a filesystem by its name.
-     *
-     * @param string $name name of a filesystem
-     * @throws InvalidArgumentException If the filesystem does not exist
-     * @return \Gaufrette\Filesystem
+     * {@inheritdoc}
      */
     public function get($name)
     {
@@ -53,20 +52,10 @@ class FilesystemService
     }
 
     /**
-     * Retrieve all registered filesystems.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getAll()
     {
         return $this->filesystems;
-    }
-
-    /**
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->getAll());
     }
 } 

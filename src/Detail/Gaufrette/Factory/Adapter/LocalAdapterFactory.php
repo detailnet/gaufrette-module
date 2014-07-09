@@ -15,9 +15,6 @@ class LocalAdapterFactory
      */
     public function createAdapter(ServiceLocatorInterface $serviceLocator, array $config)
     {
-//        /** @var \Detail\Gaufrette\Options\ModuleOptions $moduleOptions */
-//        $moduleOptions = $serviceLocator->get('Detail\Bernard\Options\ModuleOptions');
-
         $options = new Options($config);
         $adapter = new Adapter($options->getDirectory(), $options->getCreate(), $options->getMode());
 

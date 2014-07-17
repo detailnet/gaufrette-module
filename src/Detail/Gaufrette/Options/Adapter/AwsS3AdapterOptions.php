@@ -2,7 +2,7 @@
 
 namespace Detail\Gaufrette\Options\Adapter;
 
-use Detail\Gaufrette\Options\AbstractOptions;
+use Detail\Core\Options\AbstractOptions;
 
 class AwsS3AdapterOptions extends AbstractOptions
 {

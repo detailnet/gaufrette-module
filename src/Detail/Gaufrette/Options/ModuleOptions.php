@@ -2,6 +2,8 @@
 
 namespace Detail\Gaufrette\Options;
 
+use Detail\Core\Options\AbstractOptions;
+
 class ModuleOptions extends AbstractOptions
 {
     /**

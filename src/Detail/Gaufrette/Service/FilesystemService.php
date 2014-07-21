@@ -3,7 +3,6 @@
 namespace Detail\Gaufrette\Service;
 
 use InvalidArgumentException;
-use ArrayIterator;
 
 /**
  * Filesystem service.

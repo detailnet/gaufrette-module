@@ -43,7 +43,7 @@ class FilesystemService implements FilesystemServiceInterface
      */
     public function get($name)
     {
-        if (!isset($this->filesystems[$name])) {
+        if (!$this->has($name)) {
             throw new InvalidArgumentException(sprintf('No filesystem registered for name "%s"', $name));
         }
 

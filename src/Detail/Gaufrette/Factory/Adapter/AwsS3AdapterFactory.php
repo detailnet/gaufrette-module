@@ -8,7 +8,8 @@ use Gaufrette\Adapter\AwsS3 as Adapter;
 
 use Detail\Gaufrette\Options\Adapter\AwsS3AdapterOptions as Options;
 
-class AwsS3AdapterFactory
+class AwsS3AdapterFactory implements
+    AdapterInterface
 {
     /**
      * {@inheritDoc}

@@ -17,7 +17,6 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "psr/log": "~1.0",
         "knplabs/gaufrette": "0.1.*",
         "zendframework/zend-loader": "2.*",
         "zendframework/zend-modulemanager": "2.*",

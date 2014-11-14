@@ -6,7 +6,7 @@ namespace Detail\Gaufrette\Service;
 interface FilesystemServiceInterface
 {
     /**
-     * Check for existance of a filesystem by its name.
+     * Check for existence of a filesystem by its name.
      *
      * @param string $name Name of a filesystem
      * @return bool

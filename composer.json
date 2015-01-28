@@ -1,6 +1,6 @@
 {
     "name": "detailnet/gaufrette-module",
-    "description": "Gaufrette Module for Zend Framework 2",
+    "description": "Zend Framework 2 Module for Gaufrette",
     "type": "library",
     "keywords": [
         "gaufrette",
@@ -22,10 +22,13 @@
         "zendframework/zend-modulemanager": "2.*",
         "zendframework/zend-mvc": "2.*",
         "zendframework/zend-servicemanager": "2.*",
-        "detailnet/dfw-core": "0.1.1"
+        "detailnet/dfw-core": "~0.1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.3.5"
+        "phpunit/phpunit": "~4.4.5",
+        "squizlabs/php_codesniffer" : "~2.2.0",
+        "phpmd/phpmd": "~2.1.3",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": {

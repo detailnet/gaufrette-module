@@ -2,7 +2,6 @@
 
 namespace Detail\Gaufrette\Service;
 
-
 interface FilesystemServiceInterface
 {
     /**

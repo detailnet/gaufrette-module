@@ -5,9 +5,8 @@ namespace Detail\Gaufrette\Factory\Options;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+use Detail\Gaufrette\Exception\ConfigException;
 use Detail\Gaufrette\Options\ModuleOptions;
-
-use RuntimeException;
 
 class ModuleOptionsFactory implements FactoryInterface
 {
@@ -20,7 +19,7 @@ class ModuleOptionsFactory implements FactoryInterface
         $config = $serviceLocator->get('Config');
 
         if (!isset($config['gaufrette'])) {
-            throw new RuntimeException('Config for Gaufrette is not set');
+            throw new ConfigException('Config for Gaufrette is not set');
         }
 
         return new ModuleOptions($config['gaufrette']);

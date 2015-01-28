@@ -14,4 +14,4 @@ interface AdapterInterface
      * @return \Gaufrette\Adapter
      */
     public function createAdapter(ServiceLocatorInterface $serviceLocator, array $config);
-} 
+}

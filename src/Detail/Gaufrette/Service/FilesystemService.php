@@ -2,7 +2,7 @@
 
 namespace Detail\Gaufrette\Service;
 
-use InvalidArgumentException;
+use Detail\Gaufrette\Exception\InvalidArgumentException;
 
 /**
  * Filesystem service.
@@ -57,4 +57,4 @@ class FilesystemService implements FilesystemServiceInterface
     {
         return $this->filesystems;
     }
-} 
+}

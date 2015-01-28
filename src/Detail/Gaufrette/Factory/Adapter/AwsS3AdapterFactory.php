@@ -22,7 +22,10 @@ class AwsS3AdapterFactory implements
         $client = $serviceLocator->get($options->getClient());
 
         $adapter = new Adapter(
-            $client, $options->getBucket(), $options->getOptions(), $options->getDetectContentType()
+            $client,
+            $options->getBucket(),
+            $options->getOptions(),
+            $options->getDetectContentType()
         );
 
         return $adapter;

@@ -7,9 +7,8 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 use Gaufrette\Filesystem;
 
+use Detail\Gaufrette\Exception\ConfigException;
 use Detail\Gaufrette\Service\FilesystemService;
-
-use RuntimeException;
 
 class FilesystemServiceFactory implements FactoryInterface
 {
@@ -29,7 +28,7 @@ class FilesystemServiceFactory implements FactoryInterface
             /** @var \Detail\Gaufrette\Options\AdapterOptions $adapter */
 
             if (!isset($adapterFactories[$adapter->getType()])) {
-                throw new RuntimeException(
+                throw new ConfigException(
                     sprintf('No factory configured for adapter type "%s"', $adapter->getType())
                 );
             }
@@ -37,10 +36,11 @@ class FilesystemServiceFactory implements FactoryInterface
             $adapterFactoryClass = $adapterFactories[$adapter->getType()];
 
             if (!class_exists($adapterFactoryClass)) {
-                throw new RuntimeException(
+                throw new ConfigException(
                     sprintf(
                         'Adapter factory class "%s" does not exist for type "%s"',
-                        $adapterFactoryClass, $adapter->getType()
+                        $adapterFactoryClass,
+                        $adapter->getType()
                     )
                 );
             }
@@ -49,7 +49,8 @@ class FilesystemServiceFactory implements FactoryInterface
             $adapterFactory = new $adapterFactoryClass();
 
             $adapters[$name] = $adapterFactory->createAdapter(
-                $serviceLocator, $adapter->getOptions()
+                $serviceLocator,
+                $adapter->getOptions()
             );
         }
 
@@ -59,7 +60,7 @@ class FilesystemServiceFactory implements FactoryInterface
             /** @var \Detail\Gaufrette\Options\FilesystemOptions $filesystem */
 
             if (!isset($adapters[$filesystem->getAdapter()])) {
-                throw new RuntimeException(
+                throw new ConfigException(
                     sprintf('Adapter "%s" does not exist', $filesystem->getAdapter())
                 );
             }

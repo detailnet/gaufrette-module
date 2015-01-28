@@ -68,4 +68,4 @@ class LocalAdapterOptions extends AbstractOptions
     {
         $this->mode = $mode;
     }
-} 
+}

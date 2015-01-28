@@ -89,4 +89,4 @@ class AwsS3AdapterOptions extends AbstractOptions
     {
         return $this->options;
     }
-} 
+}

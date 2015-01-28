@@ -16,7 +16,7 @@ Install the module through [Composer](http://getcomposer.org/) using the followi
      ```json
      {
          "require": {
-             "detailnet/gaufrette-module": "dev-master"
+             "detailnet/gaufrette-module": "1.x-dev"
          }
      }
      ```
